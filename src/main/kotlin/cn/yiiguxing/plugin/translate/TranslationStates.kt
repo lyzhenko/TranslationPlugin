@@ -62,19 +62,19 @@ class TranslationStates : PersistentStateComponent<TranslationStates> {
     }
 
     /**
-     * @return 语言常用评分
+     * @return Общие языковые рейтинги
      */
     fun getLanguageScore(lang: Lang): Int = languageScores[lang] ?: 0
 
     /**
-     * 设置语言常用评分
+     * Установить язык обычно используется рейтинги
      */
     fun setLanguageScore(lang: Lang, score: Int) {
         languageScores[lang] = score
     }
 
     /**
-     * 增加语言常用评分
+     * Добавить общие языковые оценки
      */
     fun accumulateLanguageScore(lang: Lang) {
         if (lang != Lang.AUTO) {
