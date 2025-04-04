@@ -40,7 +40,7 @@ class TranslationStates : PersistentStateComponent<TranslationStates> {
     var translationDialogCollapseDictViewer = true
 
     /**
-     * 最大历史记录长度
+     * Maximum history length
      */
     var maxHistorySize by Delegates.vetoable(DEFAULT_HISTORY_SIZE) { _, oldValue: Int, newValue: Int ->
         if (oldValue == newValue || newValue < 0) {
