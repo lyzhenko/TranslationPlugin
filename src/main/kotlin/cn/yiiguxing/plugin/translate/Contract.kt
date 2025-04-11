@@ -29,7 +29,7 @@ interface Presenter {
     val supportedLanguages: SupportedLanguagesData
 
     /**
-     * 检测指定的源语言是否被支持
+     * Detect whether the specified source language is supported
      */
     fun isSupportedSourceLanguage(sourceLanguage: Lang): Boolean
 
