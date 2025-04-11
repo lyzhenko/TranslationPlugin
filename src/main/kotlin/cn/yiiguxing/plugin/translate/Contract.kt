@@ -24,7 +24,7 @@ interface Presenter {
     val primaryLanguage: Lang
 
     /**
-     * 已支持的语言
+     * Supported languages
      */
     val supportedLanguages: SupportedLanguagesData
 
