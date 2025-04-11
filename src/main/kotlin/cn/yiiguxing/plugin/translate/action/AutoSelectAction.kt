@@ -20,7 +20,7 @@ abstract class AutoSelectAction(
     protected abstract val selectionMode: SelectionMode
 
     /**
-     * 更新Action
+     * Аction
      *
      * @param e 事件
      */
