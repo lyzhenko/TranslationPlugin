@@ -19,6 +19,7 @@ import cn.yiiguxing.plugin.translate.trans.openai.OpenAiCredentials
 import cn.yiiguxing.plugin.translate.trans.openai.OpenAiSettings
 import cn.yiiguxing.plugin.translate.trans.openai.OpenAiTranslator
 import cn.yiiguxing.plugin.translate.trans.openai.ui.OpenAISettingsDialog
+import cn.yiiguxing.plugin.translate.trans.yandex.YandexTranslator
 import cn.yiiguxing.plugin.translate.trans.youdao.YoudaoSettingsDialog
 import cn.yiiguxing.plugin.translate.trans.youdao.YoudaoTranslator
 import cn.yiiguxing.plugin.translate.ui.AppKeySettingsDialog
@@ -43,6 +44,7 @@ enum class TranslationEngine(
         50000
     ),
     GOOGLE("translate.google", message("translation.engine.google.name"), TranslationIcons.Engines.Google),
+    YANDEX("translate.yandex", message("translation.engine.yandex.name"), TranslationIcons.Engines.Yandex),//+++ las add yandex
     YOUDAO("ai.youdao", message("translation.engine.youdao.name"), TranslationIcons.Engines.Youdao, 5000),
     BAIDU("fanyi.baidu", message("translation.engine.baidu.name"), TranslationIcons.Engines.Baidu, 10000, 1000),
     ALI("translate.ali", message("translation.engine.ali.name"), TranslationIcons.Engines.Ali, 5000),
@@ -71,6 +73,7 @@ enum class TranslationEngine(
             return when (this) {
                 MICROSOFT -> MicrosoftTranslator
                 GOOGLE -> GoogleTranslator
+                YANDEX -> YandexTranslator
                 YOUDAO -> YoudaoTranslator
                 BAIDU -> BaiduTranslator
                 ALI -> AliTranslator
@@ -90,7 +93,7 @@ enum class TranslationEngine(
     fun isConfigured(): Boolean {
         val settings = Settings.getInstance()
         return when (this) {
-            MICROSOFT, GOOGLE -> true
+            MICROSOFT, GOOGLE, YANDEX -> true
             YOUDAO -> isConfigured(settings.youdaoTranslateSettings)
             BAIDU -> isConfigured(settings.baiduTranslateSettings)
             ALI -> isConfigured(settings.aliTranslateSettings)

@@ -25,6 +25,7 @@ object TKK {
 
     private val log: Logger = logger<TKK>()
 
+
     private val tkkPattern = Pattern.compile("tkk='(\\d+).(-?\\d+)'")
 
     private var innerValue: Pair<Long, Long>? = null
